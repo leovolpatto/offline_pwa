@@ -1,0 +1,15 @@
+{
+    "name": "My Offline PWA",
+    "short_name": "Offline PWA",
+    "start_url": "index.html",
+    "display": "standalone",
+    "icons": [{
+      "src": "assets/images/icon.png",
+      "sizes": "200x200",
+      "type": "image/png",
+      "purpose": "any"
+    }],
+    "background_color": "#444F53",
+    "theme_color": "#444F53",
+    "lang": "en"
+  }

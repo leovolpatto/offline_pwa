@@ -1,0 +1,17 @@
+.visible{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+    display: none;
+}
+
+#content h3{
+    font: 300;
+    color: grey;        
+}
+
+#content h4{    
+    font-size: small;    
+}

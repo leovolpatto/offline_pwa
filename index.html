@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>My Offline PWA</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/logo-1m2.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="assets/image/icon.png">
+  <link rel="apple-touch-icon" sizes="200x200" href="assets/image/icon.png">
+  <!--add other specific sizes-->
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/image/icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/image/icon.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="assets/image/icon.png">
+  <!--add specific sizes splash screen images-->
+  <link href="assets/image/icon.png" sizes="200x200" rel="apple-touch-startup-image" />
+  <link href="assets/image/icon.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+  <link href="assets/image/icon.png"  sizes="1668x2224" rel="apple-touch-startup-image" />
+
+  <link href="assets/css/main.css" rel="stylesheet">
+  <script src="assets/js/TodoRepository.js"></script>
+  <script src="assets/js/ui.js"></script>  
+  <script src="assets/js/main.js"></script>
+</head>
+<body>
+    <section class="content hidden" id="error-content">
+        <p>
+          Your browser does not support service workers.
+        </p>
+    </section>
+
+    <section class="content" id="content">
+        normal
+    </section>
+</body>
+</html>
