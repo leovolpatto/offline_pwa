@@ -28,36 +28,39 @@ function fetchFromNetwork(request, timeout = 0){
     return fetch(request);
   }
 
-  return caches.open(cacheName).then(function(cache){
-    return cache.match(request, cache_search_options).then(function(match){
-      if(match === undefined || match == null){
-        return new Response(JSON.stringify(fallback_empty_api_response), {
-          headers: {'Content-Type': 'application/json'}
-        });
-      }
-      else{
-        console.log('[offline API data] fetched from cache: ' + request.url);
-      }
+  return caches.open(cacheName)
+    .then(function(cache){
+      return cache.match(request, cache_search_options)
+        .then(function(match){
+          if(match === undefined || match == null){
+            return new Response(JSON.stringify(fallback_empty_api_response), {
+              headers: {'Content-Type': 'application/json'}
+            });
+          }
+          else{
+            console.log('[offline API data] fetched from cache: ' + request.url);
+          }
 
-      return match || Promise.reject('no-match');
+        return match || Promise.reject('no-match');
+      });
     });
-  });
 }
 
 function fetchFromCache(request){
-  return caches.open(cacheName).then(function(cache){
-    return cache.match(request, cache_search_options).then(function(match){
-      if(match === undefined || match == null){
-        throw new Error('not found');
-      }
-      else{
-        console.log('fetched from cache: ' + request.url);
-      }
+  return caches.open(cacheName)
+    .then(function(cache){
+      return cache.match(request, cache_search_options).then(function(match){
+        if(match === undefined || match == null){
+          throw new Error('not found');
+        }
+        else{
+          console.log('fetched from cache: ' + request.url);
+        }
 
-      return match || Promise.reject('no-match');
+        return match || Promise.reject('no-match');
+      });
     });
-  });
-}
+  }
 
 self.addEventListener('fetch', (event) => {
   console.log("[Event] Trying to fetching: " + event.request.url);
